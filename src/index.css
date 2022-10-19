@@ -11,3 +11,49 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.titulo-home {
+  background-image: url("/public/fondo-pizza3.jpg");
+  height: 15rem;
+  color: white;
+  text-align: center;
+}
+
+.titulo-home h1 {
+  padding-top: 4rem;
+  font-weight: bold;
+  font-size: xxx-large;
+}
+
+.titulo-home h6 {
+  font-weight: bold;
+  font-size: large;
+}
+
+.btn-card {
+  color: white;
+  width: 7rem;
+}
+
+.precio-card {
+  text-align: center;
+  display: block;
+  padding-top: 1rem;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}
+.botones-card {
+  text-align: center;
+}
+
+.card-text {
+  font-weight: bold;
+}
+
+.card-title {
+  font-size: x-large;
+}
