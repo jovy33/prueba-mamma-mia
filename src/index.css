@@ -46,6 +46,7 @@ code {
 ul {
   list-style: none;
 }
+
 .botones-card {
   text-align: center;
 }
@@ -56,4 +57,14 @@ ul {
 
 .card-title {
   font-size: x-large;
+}
+
+.card-detalle {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.botones-detalle {
+  display: flex;
+  justify-content: space-between;
 }
