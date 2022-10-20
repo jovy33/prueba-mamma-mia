@@ -96,7 +96,7 @@ ul {
 }
 
 .detalle-ingredientes {
-  margin-top: 8%;
+  /* margin-top: 8%; */
 }
 
 .carrito {
@@ -164,7 +164,7 @@ ul {
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 2%;
-  width: 82%;
+  width: 91%;
   justify-items: baseline;
   margin-top: 3%;
 }

@@ -5,7 +5,7 @@ import CardPizza from '../components/CardPizza'
 import Header from '../components/Header'
 
 export default function Home() {
-  const { pizzas } = useContext(MyContext)
+  const { pizzas } = useContext(MyContext);
 
   return (
     <div>

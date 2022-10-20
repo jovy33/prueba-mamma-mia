@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyContext from './my_context';
 import NavbarPropio from "./components/NavbarPropio";
@@ -29,8 +28,8 @@ function App() {
           <NavbarPropio />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/pizzaDetalle" element={<PizzaDetalle />} />
             <Route path="/carrito" element={<Carrito />} />
+            <Route path="/pizza-detalle/:id" element={<PizzaDetalle />} />
 
           </Routes>
 
