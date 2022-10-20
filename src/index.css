@@ -68,3 +68,103 @@ ul {
   display: flex;
   justify-content: space-between;
 }
+
+.titulo-detalle {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.detalle-descripcion {
+  font-weight: normal;
+}
+
+.vista-detalle {
+  margin: 3%;
+  padding-top: 1%;
+}
+
+.inactive {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.active {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.detalle-ingredientes {
+  margin-top: 8%;
+}
+
+.carrito {
+  margin: 5rem;
+}
+
+.detalle-pedido {
+  display: flex;
+  align-items: center;
+}
+
+.pedido {
+  display: flex;
+  justify-content: space-between;
+}
+
+.carrito-botones {
+  display: flex;
+  align-items: center;
+  width: 17%;
+}
+
+.precio-carrito {
+  font-size: larger;
+  margin-right: 10%;
+  color: green;
+  font-weight: bold;
+}
+
+.carrito-cantidad {
+  margin-right: 3%;
+  margin-left: 3%;
+  font-weight: bold;
+}
+
+.span-total {
+  display: block;
+  margin-top: 2%;
+  font-size: x-large;
+  font-weight: bold;
+  margin-bottom: 1%;
+}
+
+.carrito-nombre-pizza {
+  margin-left: 10%;
+}
+
+.carrito-card {
+  margin-top: 1%;
+}
+
+.carrito-titulo {
+  margin-bottom: 2%;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.div-card-pizzas {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.div-card-pizzas-interno {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 2%;
+  width: 82%;
+  justify-items: baseline;
+  margin-top: 3%;
+}

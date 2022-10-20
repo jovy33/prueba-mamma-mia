@@ -5,22 +5,22 @@ import Button from 'react-bootstrap/Button';
 
 export default function PizzaDetalle() {
     return (
-        <div>
+        <div className='vista-detalle'>
             <Card className='card-detalle'>
                 <div className='foto-detalle'>
                     <Card.Img variant="top" src="/fondo-pizza.jpg" />
                 </div>
                 <div className='info-detalle'>
                     <Card.Body>
-                        <Card.Title> Napolitana </Card.Title>
+                        <Card.Title className='titulo-detalle'> Napolitana </Card.Title>
                     </Card.Body>
                     <hr/>
                     <ListGroup className="list-group-flush">
                         <ListGroup.Item>
-                        <Card.Text>
+                        <Card.Text className='detalle-descripcion'>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quisquam molestiae, beatae, fugiat porro incidunt, asperiores consequuntur quia doloribus sint quam voluptate nobis velit nam et perspiciatis! Praesentium, earum illum!
                             </Card.Text>
-                            <Card.Text>
+                            <Card.Text className='detalle-ingredientes'>
                                 Ingredientes:
                             </Card.Text>
                             <ul>

@@ -14,7 +14,7 @@ export default function NavbarPropio() {
 					</NavLink>
 				</Navbar.Brand>
 				<Navbar.Collapse className="justify-content-end">
-					<NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} end to="/pokemones">
+					<NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} end to="/carrito">
 						<img width="40" src="/carrito.png" alt="" />
 						$
 					</NavLink>

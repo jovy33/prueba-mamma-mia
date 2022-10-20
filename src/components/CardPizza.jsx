@@ -3,13 +3,16 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 
-export default function CardPizza() {
+export default function CardPizza(props) {
+    const { pizza } = props;
+    const { id, name, desc, ingredients, price, img } = pizza;
+    
     return (
         <div>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="/fondo-pizza.jpg" />
+                <Card.Img variant="top" src={img} />
                 <Card.Body>
-                    <Card.Title> Napolitana </Card.Title>
+                    <Card.Title> {name} </Card.Title>
                 </Card.Body>
                 <ListGroup className="list-group-flush">
                     <ListGroup.Item>
@@ -17,14 +20,15 @@ export default function CardPizza() {
                             Ingredientes:
                         </Card.Text>
                         <ul>
-                            <li><img width="20" src="/pizza.png" alt="" /> Mozarella</li>
-                            <li><img width="20" src="/pizza.png" alt="" /> Tomates</li>
-                            <li><img width="20" src="/pizza.png" alt="" /> Jamon</li>
-                            <li><img width="20" src="/pizza.png" alt="" /> Oregano</li>
+                            {
+                                ingredients.map((ingredient, i) => (
+                                    <li key={i}><img width="20" src="/pizza.png" alt="" /> {ingredient} </li>
+                                ))
+                            }
                         </ul>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                        <span className='precio-card'> $5.590</span>
+                        <span className='precio-card'> ${price}</span>
                         <br />
                         <div className='botones-card'>
                             <Button className='btn-card' variant="info">Ver Más <img width="20" src="/ojos.png" alt="" /></Button>{' '}

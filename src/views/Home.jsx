@@ -1,15 +1,23 @@
 import React from 'react'
+import MyContext from '../my_context';
+import { useContext } from "react";
 import CardPizza from '../components/CardPizza'
+import Header from '../components/Header'
 
 export default function Home() {
+  const { pizzas } = useContext(MyContext)
+
   return (
     <div>
-      <div className='titulo-home'>
-        <h1> ¡Pizzería Mamma Mía! </h1>
-        <h6> ¡Tenemos las mejores pizzas que podrás encontrar! </h6>
-      </div>
-      <div>
-        <CardPizza />
+      <Header />
+      <div className='div-card-pizzas'>
+        <div className='div-card-pizzas-interno'>
+          {
+            pizzas.map((pizza, i) => (
+              <CardPizza key={i} pizza={pizza} index={i} />
+            ))
+          }
+        </div>
       </div>
     </div>
   )
