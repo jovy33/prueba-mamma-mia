@@ -13,13 +13,13 @@ export default function NavbarPropio() {
 				<Navbar.Brand>
 					<NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} end to="/">
 						<img width="40" src="/pizza.png" alt="" />
-						Pizzeria Mamma Mía!
+						<span className='navbar-titulo'> Pizzeria Mamma Mía! </span>
 					</NavLink>
 				</Navbar.Brand>
 				<Navbar.Collapse className="justify-content-end">
 					<NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} end to="/carrito">
 						<img width="40" src="/carrito.png" alt="" />
-						$ {total}
+						<span className='navbar-titulo'> $ {total} </span>
 					</NavLink>
 				</Navbar.Collapse>
 			</Container>

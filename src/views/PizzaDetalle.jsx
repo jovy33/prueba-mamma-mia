@@ -30,7 +30,7 @@ export default function PizzaDetalle() {
                     <Card.Img variant="top" src="/fondo-pizza.jpg" />
                 </div>
                 <div className='info-detalle'>
-                    <Card.Body>
+                    <Card.Body className='detalle-body'>
                         <Card.Title className='titulo-detalle'> {pizzaDetalle.name} </Card.Title>
                     </Card.Body>
                     <hr/>
@@ -42,7 +42,7 @@ export default function PizzaDetalle() {
                             <Card.Text className='detalle-ingredientes'>
                                 Ingredientes:
                             </Card.Text>
-                            <ul>
+                            <ul className='ingredientes-ul'>
                             {                            
                                 ingredients.map((ingredient, i) => (
                                     <li key={i}><img width="20" src="/pizza.png" alt="" /> {ingredient} </li>

@@ -76,6 +76,11 @@ ul {
 
 .detalle-descripcion {
   font-weight: normal;
+  font-size: small;
+}
+
+.ingredientes-ul {
+  font-size: small;
 }
 
 .vista-detalle {
@@ -87,16 +92,14 @@ ul {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  width: 15%;
 }
 
 .active {
   color: white;
   text-decoration: none;
   font-weight: bold;
-}
-
-.detalle-ingredientes {
-  /* margin-top: 8%; */
+  width: 15%;
 }
 
 .carrito {
@@ -167,4 +170,12 @@ ul {
   width: 91%;
   justify-items: baseline;
   margin-top: 3%;
+}
+
+.detalle-body {
+  padding-bottom: 0%;
+}
+
+.navbar-titulo {
+  margin-left: 3%;
 }
