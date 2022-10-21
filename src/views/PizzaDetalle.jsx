@@ -1,23 +1,28 @@
-import React, { useState, useEffect } from 'react'
-import MyContext from '../my_context';
-import { useContext } from "react";
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
+import React, { useState, useEffect, useContext } from 'react'
 import Button from 'react-bootstrap/Button';
 import { useParams } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import MyContext from '../my_context';
 
 export default function PizzaDetalle() {
-    const [pizzaDetalle, setPizzaDetalle] = useState({});
     const { pizzas } = useContext(MyContext);
+    const [pizzaDetalle, setPizzaDetalle] = useState({});
+    const [ingredients, setIngredients] = useState([]);
     const { id } = useParams();
+
     const cargarDetalle = () => {
-        const detalle = pizzas.find(pizza => pizza.id === id);
-        setPizzaDetalle(detalle);
+        let detallePizzaEncontrada = pizzas.find(pizza => pizza.id === id);
+        if (detallePizzaEncontrada != undefined) {
+            setPizzaDetalle(detallePizzaEncontrada);
+            setIngredients(detallePizzaEncontrada.ingredients);
+        }
     };
+
     useEffect(() => {
         cargarDetalle();
     }, [pizzas]);
-    
+
     return (
         <div className='vista-detalle'>
             <Card className='card-detalle'>
@@ -38,8 +43,8 @@ export default function PizzaDetalle() {
                                 Ingredientes:
                             </Card.Text>
                             <ul>
-                            {
-                                pizzaDetalle.ingredients.map((ingredient, i) => (
+                            {                            
+                                ingredients.map((ingredient, i) => (
                                     <li key={i}><img width="20" src="/pizza.png" alt="" /> {ingredient} </li>
                                 ))
                             }

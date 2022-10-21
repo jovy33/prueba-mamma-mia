@@ -35,7 +35,7 @@ export default function CardPizza(props) {
                         <span className='precio-card'> ${price}</span>
                         <br />
                         <div className='botones-card'>
-                            <Button className='btn-card' variant="info"  onClick={irDetallePizza}>Ver Más <img width="20" src="/ojos.png" alt="" /></Button>{' '}
+                            <Button className='btn-card' variant="info"  onClick={ () => irDetallePizza() }>Ver Más <img width="20" src="/ojos.png" alt="" /></Button>{' '}
                             <Button className='btn-card' variant="danger">Añadir <img width="20" src="/carrito.png" alt="" /></Button>{' '}
                         </div>
                     </ListGroup.Item>
