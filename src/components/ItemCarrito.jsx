@@ -5,7 +5,7 @@ import MyContext from '../my_context';
 
 export default function ItemCarrito(props) {
     const { listadoCarrito, setListadoCarrito } = useContext(MyContext);
-    const pizza = props.pizza;
+    const { pizza, cantidad, totalValorPorPizza } = props;
 
     const agregarPizza = () => {
         const nuevoListado = [pizza, ...listadoCarrito];
@@ -13,7 +13,13 @@ export default function ItemCarrito(props) {
     }
 
     const eliminarPizza = () => {
+        const listadoOtrasPizzas = listadoCarrito.filter(pizzaRecorrida => pizzaRecorrida.id != pizza.id);
+        const listadoPizzasEliminar = listadoCarrito.filter(pizzaRecorrida => pizzaRecorrida.id === pizza.id);
 
+        listadoPizzasEliminar.pop();
+
+        const nuevoListadoCarrito = [...listadoPizzasEliminar, ...listadoOtrasPizzas];
+        setListadoCarrito(nuevoListadoCarrito);
     }
     return (
         <div>
@@ -24,10 +30,10 @@ export default function ItemCarrito(props) {
                         <h6 className='carrito-nombre-pizza'>{pizza.name} </h6>
                     </div>
                     <div className='carrito-botones'>
-                        <span className='precio-carrito'> ${pizza.price}</span>
-                        <Button className='btn-carrito' variant="danger" onClick={ () => eliminarPizza() }> - </Button>{' '}
-                        <span className='carrito-cantidad'> 6 </span>
-                        <Button className='btn-carrito' variant="info" onClick={ () => agregarPizza() }> + </Button>{' '}
+                        <span className='precio-carrito'> ${totalValorPorPizza}</span>
+                        <Button className='btn-carrito' variant="danger" onClick={() => eliminarPizza()}> - </Button>{' '}
+                        <span className='carrito-cantidad'> {cantidad} </span>
+                        <Button className='btn-carrito' variant="info" onClick={() => agregarPizza()}> + </Button>{' '}
                     </div>
                 </Card.Body>
             </Card>

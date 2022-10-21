@@ -12,21 +12,26 @@ function App() {
   const [listadoCarrito, setListadoCarrito] = useState([]);
   const [total, setTotal] = useState(0);
 
-  const sharedPizzas = { pizzas, setPizzas, listadoCarrito, setListadoCarrito, total };
   const url = "http://localhost:3000/pizzas.json";
   const traerPizzas = async () => {
     const res = await fetch(url);
-    const resultadoPizzas = await res.json();  
+    const resultadoPizzas = await res.json();
     setPizzas(resultadoPizzas);
-  } 
+  }
 
-	const calcularTotal = () => {
-		let totalPrecio = 0;
-		listadoCarrito.map(pizza => {
-			totalPrecio = totalPrecio + pizza.price;
-		})
-		setTotal(totalPrecio);
-	}
+  const calcularTotal = () => {
+    let totalPrecio = 0;
+    listadoCarrito.map(pizza => {
+      totalPrecio = totalPrecio + pizza.price;
+    })
+    setTotal(totalPrecio);
+  }
+
+  const agregarCarrito = (pizza) => {
+    const listadoNuevo = [pizza, ...listadoCarrito];
+    setListadoCarrito(listadoNuevo);
+    console.log(listadoNuevo)
+  }
 
   useEffect(() => {
     calcularTotal();
@@ -35,6 +40,8 @@ function App() {
   useEffect(() => {
     traerPizzas();
   }, []);
+
+  const sharedPizzas = { pizzas, setPizzas, listadoCarrito, setListadoCarrito, total, agregarCarrito };
 
   return (
     <>
