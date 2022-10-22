@@ -12,7 +12,8 @@ function App() {
   const [listadoCarrito, setListadoCarrito] = useState([]);
   const [total, setTotal] = useState(0);
 
-  const url = "http://localhost:3000/pizzas.json";
+  const host = window.location.href;
+  const url = `${host}/pizzas.json`;
   const traerPizzas = async () => {
     const res = await fetch(url);
     const resultadoPizzas = await res.json();
